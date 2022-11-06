@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dog_community_app'
+    'dog_community_app',
+    'custom_admin_portal'
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,10 @@ TEMPLATES = [
     },
 ]
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT =BASE_DIR / 'media'
+
 WSGI_APPLICATION = 'dog_community.wsgi.application'
 
 
@@ -77,11 +83,11 @@ WSGI_APPLICATION = 'dog_community.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dog_community',
+        'NAME': 'dog_communitydb',
         'USER': 'root',
         'HOST':'localhost',
         'PORT':'3306',
-        'PASSWORD':'****'
+        'PASSWORD':'Keytomysql@2'
     }
 }
 
@@ -120,9 +126,11 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# https://docs.djangoproject.com/en/3.2/howto/static-files/s
 
-STATIC_URL = '/static/'
+STATIC_URL = 'dog_community_app/static/'
+STATIC_ROOT = 'dog_community/'
+STATICFILES_DIRS = [BASE_DIR/ 'dog_community_app/static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
