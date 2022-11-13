@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6oq@keh_kwq+wzs%i#7x*1)bm25k1x5w!hq0^kn&zc!hw&0byw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dogs-community.azurewebsites.net']
+ALLOWED_HOSTS = ['dog-community.azurewebsites.net']
 
 
 # Application definition
