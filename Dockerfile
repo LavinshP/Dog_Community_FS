@@ -8,4 +8,4 @@ COPY . /app
 ENV PORT 8080
 EXPOSE 8080
 
-ENTRYPOINT ["gunicorn", "-b", ":8080", "application:app"]
+ENTRYPOINT ["gunicorn", "-b", ":8080", "dog_community.wsgi:application"]
