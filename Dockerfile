@@ -5,5 +5,9 @@ ADD . /app
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
-ENV PORT 8000
 EXPOSE 8000
+
+COPY init.sh /usr/local/bin/
+	
+RUN chmod u+x /usr/local/bin/init.sh
+ENTRYPOINT ["init.sh"]
