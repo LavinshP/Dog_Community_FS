@@ -3,4 +3,4 @@
 
 #CMD ["gunicorn",  "--bind", "8000:8000", "mysite.wsgi:application"]
 
-gunicorn -b 0.0.0.0:8000 mysite.wsgi:application
+gunicorn -b 0.0.0.0:8000 dog_community.wsgi:application
