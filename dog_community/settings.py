@@ -126,7 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/s
 
 STATIC_URL = 'dog_community_app/static/'
-STATIC_ROOT = BASE_DIR / 'dog_community_app/staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type

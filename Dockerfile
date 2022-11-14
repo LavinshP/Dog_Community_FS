@@ -1,13 +1,11 @@
-FROM python:3.10
-ENV PYTHONUNBUFFERED 1
+FROM mcr.microsoft.com/appsvc/python:latest
+
 WORKDIR /app
 ADD . /app
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
-EXPOSE 8000
+ENV PORT 8080
+EXPOSE 8080
 
-COPY init.sh /usr/local/bin/
-	
-RUN chmod u+x /usr/local/bin/init.sh
-ENTRYPOINT ["init.sh"]
+ENTRYPOINT ["gunicorn","-b", ":8080", "app:dog_community.wsgi"]
